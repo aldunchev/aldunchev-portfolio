@@ -33,6 +33,26 @@ html {
   min-width: 360px;
 }
 
+h1 {
+  @apply text-4xl font-medium tracking-tight mt-6 mb-2;
+}
+
+h2 {
+  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+}
+
+h3 {
+  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+}
+
+h4 {
+  @apply text-lg font-medium tracking-tight mt-6 mb-2;
+}
+
+p {
+  @apply my-4 text-neutral-800 dark:text-neutral-200;
+}
+
 .prose .anchor {
   @apply absolute invisible no-underline;
 
@@ -47,7 +67,7 @@ html {
   @apply visible;
 }
 
-.prose a {
+p a {
   @apply underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em];
 }
 
@@ -83,28 +103,8 @@ html {
   @apply m-0;
 }
 
-.prose p {
-  @apply my-4 text-neutral-800 dark:text-neutral-200;
-}
-
-.prose h1 {
-  @apply text-4xl font-medium tracking-tight mt-6 mb-2;
-}
-
-.prose h2 {
-  @apply text-xl font-medium tracking-tight mt-6 mb-2;
-}
-
-.prose h3 {
-  @apply text-xl font-medium tracking-tight mt-6 mb-2;
-}
-
-.prose h4 {
-  @apply text-lg font-medium tracking-tight mt-6 mb-2;
-}
-
 .prose strong {
-  @apply font-medium;
+  @apply font-bold;
 }
 
 .prose ul {
@@ -146,5 +146,45 @@ table {
 }
 
 .title {
-  text-wrap: balance;
+  text-wrap: pretty;
+}
+
+@keyframes scale-x {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.animation-scale-x {
+  animation: scale-x 1s ease-in-out;
+}
+
+.section {
+  @apply py-12;
+
+  &:first-child {
+    @apply pt-0;
+  }
+}
+
+.section--divider {
+  @apply relative border-b border-gray-200;
+
+  &::after {
+    @apply absolute bg-white text-red-400 font-bold;
+
+    content: '</>';
+    font-size: 0.5rem;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px;
+  }
+}
+
+hr {
+  @apply text-gray-200;
 }

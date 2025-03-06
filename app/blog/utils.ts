@@ -8,6 +8,11 @@ type Metadata = {
   image?: string
 }
 
+/**
+ * Parse the frontmatter of a MDX file
+ * @param fileContent - The content of the MDX file
+ * @returns The metadata and content of the MDX file
+ */
 function parseFrontmatter(fileContent: string) {
   let frontmatterRegex = /---\s*([\s\S]*?)\s*---/
   let match = frontmatterRegex.exec(fileContent)
@@ -26,16 +31,31 @@ function parseFrontmatter(fileContent: string) {
   return { metadata: metadata as Metadata, content }
 }
 
-function getMDXFiles(dir) {
+/**
+ * Get all MDX files in a directory
+ * @param dir - The directory to get the MDX files from
+ * @returns The list of MDX files
+ */
+function getMDXFiles(dir: string) {
   return fs.readdirSync(dir).filter((file) => path.extname(file) === '.mdx')
 }
 
-function readMDXFile(filePath) {
+/**
+ * Read a MDX file and return the metadata and content
+ * @param filePath - The path to the MDX file
+ * @returns The metadata and content of the MDX file
+ */
+function readMDXFile(filePath: string) {
   let rawContent = fs.readFileSync(filePath, 'utf-8')
   return parseFrontmatter(rawContent)
 }
 
-function getMDXData(dir) {
+/**
+ * Get the metadata, slug and content of all MDX files in a directory
+ * @param dir - The directory to get the MDX files from
+ * @returns The list of MDX files with their metadata, slug and content
+ */
+function getMDXData(dir: string) {
   let mdxFiles = getMDXFiles(dir)
   return mdxFiles.map((file) => {
     let { metadata, content } = readMDXFile(path.join(dir, file))
