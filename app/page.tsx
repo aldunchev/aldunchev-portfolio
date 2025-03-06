@@ -1,21 +1,24 @@
 import { BlogPosts } from 'app/components/posts'
-
+import Link from 'next/link'
 export default function Page() {
   return (
-    <section>
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
-        My Portfolio
-      </h1>
-      <p className="mb-4">
-        {`I'm a Vim enthusiast and tab advocate, finding unmatched efficiency in
-        Vim's keystroke commands and tabs' flexibility for personal viewing
-        preferences. This extends to my support for static typing, where its
-        early error detection ensures cleaner code, and my preference for dark
-        mode, which eases long coding sessions by reducing eye strain.`}
-      </p>
-      <div className="my-8">
+    <>
+      <section className="mb-8">
+        <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
+          Welcome to my personal website
+        </h1>
+        <p className="mb-4">
+            I'm Alexander Dunchev, a front-end developer passionate about creating accessible, high-performing websites.
+        </p>
+        <p className="mb-4">
+          I have a strong affinity for Drupal and continuously seek ways to enhance the user experience.
+        </p>
+        <p>Checkout the <Link href="/about-me">About Me</Link> page to learn more about me.</p>
+      </section>
+      <section className="mb-8">
+        <h2 className="text-lg font-semibold mb-4">Latest Blog Posts</h2>
         <BlogPosts />
-      </div>
-    </section>
+      </section>
+    </>
   )
 }
