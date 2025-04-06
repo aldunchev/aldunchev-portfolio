@@ -1,8 +1,8 @@
 ---
-title: 'Debug with Xdebug, VSCode and Lando'
-publishedAt: '2025-03-06'
-summary: 'Learn how to use VSCode and XDebug to start debugging your Drupal project.'
-image: '/images/blog/debug-with-xdebug-vscode-and-lando.webp'
+title: "Debug with Xdebug, VSCode and Lando"
+publishedAt: "2025-03-17"
+summary: "Learn how to use VSCode and XDebug to start debugging your Drupal project."
+image: "/images/blog/debug-with-xdebug-vscode-and-lando.webp"
 ---
 
 In this article, I’ll share with you how to use VSCode and XDebug to start debugging your Drupal project.
@@ -44,16 +44,13 @@ The path to the launch.json should be: `[PROJECT_ROOT]/.vscode/launch.json`
 
 Then install the XDebug helper extension for Chrome: [Xdebug helper](https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc)
 
-
 ![XDebug Chrome extension](/images/blog/xdebug-chrome-extension.webp)
 
 ## How to use the VSCode debugger
 
 First, you need to start a debug session by clicking on the debug menu button:
 
-
 ![Start XDebug](/images/blog/start-xdebug.webp)
-
 
 When you are in the debug tab in VSCode, in the drop-down, where the play button is, make sure you select **listen for Xdebug**:
 
@@ -67,16 +64,13 @@ Make sure XDebug is running in Lando by running: `lando xdebug-on` in the termin
 
 Put a breakpoint where you want your code to break execution:
 
-
 ![Debug Breakpoint](/images/blog/debug-breakpoint.webp)
 
 Open your local site in Chrome browser and select the XDebug extension:
 
-
 ![Local site](/images/blog/local-site.webp)
 
 Refresh the page and VSCode should break on the breakpoint and you can inspect variables, go back and forth in the code…
-
 
 ![Debugging started](/images/blog/debugging-started.webp)
 
@@ -84,9 +78,9 @@ Refresh the page and VSCode should break on the breakpoint and you can inspect v
 
 Enable the devel module if you haven’t and simply put a
 
-```{{ devel_breakpoint() }}```
+`{{ devel_breakpoint() }}`
 
- in the template you want to debug. You will have to go through a few steps to reach the template with the breakpoint, but nothing major.
+in the template you want to debug. You will have to go through a few steps to reach the template with the breakpoint, but nothing major.
 
 Here is the Drupal documentation about it: [Debugging Twig templates](https://www.drupal.org/docs/develop/theming-drupal/twig-in-drupal/debugging-twig-templates).
 

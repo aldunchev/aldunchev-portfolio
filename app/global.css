@@ -15,6 +15,7 @@
   --sh-jsxliterals: #6266d1;
   --sh-property: #e25a1c;
   --sh-entity: #e25a1c;
+  --container: 670px; /* Best for readability. */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -68,7 +69,7 @@ p {
 }
 
 p a {
-  @apply underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em];
+  @apply underline hover:no-underline decoration-neutral-400 dark:decoration-neutral-600;
 }
 
 .prose .anchor:after {
@@ -187,4 +188,36 @@ table {
 
 hr {
   @apply text-gray-200;
+}
+
+@layer utilities {
+  .container {
+    max-width: var(--container);
+
+    @apply mx-auto px-4;
+  }
+}
+
+.navigation__link {
+  @apply relative;
+}
+
+.navigation__link--active {
+  @apply items-center font-bold;
+
+  &::before,
+  &::after {
+    font-size: 0.875rem;
+    margin-top: 1px;
+  }
+
+  &::before {
+    content: '<';
+    margin-right: 1px;
+  }
+
+  &::after {
+    content: ' />';
+    margin-left: 1px;
+  }
 }
