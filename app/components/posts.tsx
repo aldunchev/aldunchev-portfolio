@@ -5,7 +5,7 @@ export function BlogPosts() {
   let allBlogs = getBlogPosts();
 
   return (
-    <>
+    <nav>
       {allBlogs
         .sort((a, b) => {
           if (
@@ -18,19 +18,19 @@ export function BlogPosts() {
         .map((post) => (
           <Link
             key={post.slug}
-            className="flex flex-col space-y-1 mb-4 hover:underline"
+            className="flex flex-col space-y-1 mb-4 hover:underline pb-4 border-b border-gray-200 last:border-b-0"
             href={`/blog/${post.slug}`}
           >
-            <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
-              <p className="text-neutral-600 dark:text-neutral-400 w-[100px] tabular-nums">
-                {formatDate(post.metadata.publishedAt, false)}
-              </p>
-              <p className="text-neutral-900 dark:text-neutral-100 tracking-tight">
+            <div className="flex flex-col">
+              <h2 className="text-neutral-900 font-semibold tracking-tight">
                 {post.metadata.title}
-              </p>
+              </h2>
+              <span className="text-neutral-60 text-sm">
+                {formatDate(post.metadata.publishedAt, false)}
+              </span>
             </div>
           </Link>
         ))}
-    </>
+    </nav>
   );
 }

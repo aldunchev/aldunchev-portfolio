@@ -17,9 +17,9 @@ function ArrowIcon() {
 
 export default function Footer() {
   return (
-    <footer className="mb-16 border-t border-neutral-200 dark:border-neutral-800">
-      <div className="container">
-        <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
+    <footer className="py-4 border-t border-neutral-200 dark:border-neutral-800">
+      <div className="container flex justify-between">
+        <ul className="font-sm flex flex-col text-neutral-600 md:flex-row">
           <li>
             <a
               className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
@@ -54,7 +54,7 @@ export default function Footer() {
             </a>
           </li>
         </ul>
-        <p className="mt-8 text-neutral-600 dark:text-neutral-300">
+        <p className="text-neutral-600 dark:text-neutral-300">
           © {new Date().getFullYear()} MIT Licensed
         </p>
       </div>
