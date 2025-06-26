@@ -19,7 +19,7 @@ export default function Footer() {
   return (
     <footer className="py-4 border-t border-neutral-200 dark:border-neutral-800">
       <div className="container flex justify-between">
-        <ul className="font-sm flex flex-col text-neutral-600 md:flex-row">
+        <ul className="font-sm flex flex-col text-neutral-600 md:flex-row gap-4">
           <li>
             <a
               className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
