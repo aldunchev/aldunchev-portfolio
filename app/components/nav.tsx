@@ -14,9 +14,6 @@ const navItems = {
   "/about-me": {
     name: "about-me",
   },
-  "/chatbot": {
-    name: "chatbot",
-  },
 };
 
 export function Navbar() {
