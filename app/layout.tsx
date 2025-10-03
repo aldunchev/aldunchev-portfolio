@@ -6,7 +6,6 @@ import { Navbar } from "./components/nav";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Footer from "./components/footer";
-import Chatbot from "./components/chatbot";
 import { baseUrl } from "./sitemap";
 
 export const metadata: Metadata = {
@@ -63,7 +62,6 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-auto mt-6 flex flex-col">{children}</main>
         <Footer />
-        <Chatbot />
         <Analytics />
         <SpeedInsights />
       </body>
